@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<title>QualIn - Inc</title>
+	<meta name="description" content="Bootstrap.">
+	<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+	<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+
+<body style="margin: 20px auto">
+	<div class="container">
+		<div class="row header" style="text-align: center; color: green">
+			<h3>QualIn Test Automation Report</h3>
+		</div>
+		<table id="myTable" class="table table-striped">
+			<thead>
+				<tr>
+					<th>SNo</th>
+					<th>TC Name</th>
+					<th>TC Description</th>
+					<th>TC Status</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="eachList:${reportList}">
+					<td th:text="${eachList.id}"></td>
+					<td th:text="${eachList.tcName}"></td>
+					<td th:text="${eachList.tcDescription}"></td>
+					<td th:switch="${eachList.tcStatus}">
+					<span th:case="pass" class="badge badge-pill badge-success">pass</span>
+					<span th:case="fail" class="badge badge-pill badge-danger">fail</span>
+					<span th:case="skip" class="badge badge-pill badge-warning">skip</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+	</div>
+</body>
+<script>
+	$(document).ready(function() {
+		$('#myTable').dataTable();
+	});
+</script>
+</html>

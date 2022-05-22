@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Practice Suite" parallel="classes" thread-count="2">
+
+    <listeners>
+        <listener class-name="com.qualin.springselenium.qualinservice.listeners.TestListener"/>
+    </listeners>
+
+    <!-- <test name="Test Basics 1">
+        <classes>
+            <class name="com.qualin.springselenium.tests.GoogleTests1"/>
+            <class name="com.qualin.springselenium.tests.GoogleTests2"/>
+        </classes>
+    </test> 
+
+    <test name="Test Basics 2">
+        <classes>
+            <class name="com.qualin.springselenium.tests.GoogleTests3"/>
+            <class name="com.qualin.springselenium.tests.GoogleTests4"/>
+        </classes>
+    </test>  -->
+    
+    <test name="Test Basics 3">
+        <classes>
+            <class name="com.qualin.springselenium.tests.HDFCTests5"/>
+        </classes>
+    </test>
+</suite> <!-- Suite -->
